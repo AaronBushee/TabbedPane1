@@ -4,6 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import java.awt.BorderLayout;
 
 public class JTabbedPaneFrame extends JFrame
 {
@@ -27,11 +28,14 @@ public class JTabbedPaneFrame extends JFrame
     tabPane.addTab("Tab Two", null, panel2, "SecondPanel");
 
     //add third tab
-    JLabel label3 = new JLabel ("Let's do something new here", SwingConstants.CENTER);
+    JLabel label3 = new JLabel ("These are fabulous buttons!", SwingConstants.CENTER);
     JPanel panel3 = new JPanel();
+    panel3.setLayout(new BorderLayout());
     panel3.add(label3);
-    panel3.add(new JButton("North"));
-    panel3.add(new JButton("South"));
+    panel3.add(new JButton("North"), BorderLayout.NORTH);
+    panel3.add(new JButton("East"), BorderLayout.EAST);
+    panel3.add(new JButton("West"), BorderLayout.WEST);
+    panel3.add(new JButton("South"), BorderLayout.SOUTH);
     tabPane.addTab("Tab Three", null, panel3, "ThirdPanel");//keep the add below all the tab's formatting
 
 
